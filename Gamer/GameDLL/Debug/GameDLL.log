@@ -1,1 +1,7 @@
-﻿  GameDLL.vcxproj -> D:\Code\Gamer\Gamer\Debug\Gamer.dll
+﻿  pch.cpp
+  subhook.c
+  dllmain.cpp
+  kernel32.cpp
+  user32.cpp
+  正在生成代码...
+  GameDLL.vcxproj -> D:\Code\Gamer\Gamer\Debug\Gamer.dll

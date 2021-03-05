@@ -21,8 +21,14 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="s_kernel32.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="hook_utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="user32.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +36,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thrid\subhook.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="user32.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

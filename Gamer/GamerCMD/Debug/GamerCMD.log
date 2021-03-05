@@ -1,4 +1,5 @@
-﻿  GamerCMD.cpp
+﻿  subhook.c
+  GamerCMD.cpp
   GamerHandler.cpp
   正在生成代码...
   GamerCMD.vcxproj -> D:\Code\Gamer\Gamer\Debug\GamerCMD.exe

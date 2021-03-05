@@ -5,7 +5,7 @@ using std::string;
 namespace seraphim {
 	class GamerHandler {
 	private:
-		bool pauseAtCreate{true};
+		bool pauseAtCreate{ true };
 		HANDLE  hProcess;
 		HANDLE hTread;
 		DWORD  pid;
@@ -22,5 +22,4 @@ namespace seraphim {
 		void termindate();
 		void print();
 	};
-
 };

@@ -1,7 +1,6 @@
 #include "GamerHandler.h"
 #include<Windows.h>
 namespace seraphim {
-
 	GamerHandler::GamerHandler()
 	{
 		targetExeName = "GamerWin32.exe";
@@ -31,37 +30,35 @@ namespace seraphim {
 	{
 		int code = 0;
 		do {
-		auto dwSize = dllName.size() +1;
-		const char* pszLibFile = dllName.c_str();
-		LPVOID pszLibFileRemote = (PWSTR)VirtualAllocEx(hProcess, NULL, dwSize, MEM_COMMIT, PAGE_READWRITE);
-		if (pszLibFileRemote == nullptr) {
-			code = -1;
-			break;
-		}
-		DWORD n = WriteProcessMemory(hProcess, pszLibFileRemote, (PVOID)pszLibFile, dwSize, NULL);
-		if (n <= 0) {
-			code = -2;
-			break;
-		}
-		auto module = GetModuleHandle("Kernel32");
-		if (module == nullptr) {
-			code = -3;
-			break;
-		}
-		PTHREAD_START_ROUTINE pfnThreadRtn = (PTHREAD_START_ROUTINE)GetProcAddress(module, "LoadLibraryA");
-		if (module == nullptr) {
-			code = -4;
-			break;
-		}
-		auto hThread = CreateRemoteThread(hProcess, NULL, 0, pfnThreadRtn, pszLibFileRemote, 0, NULL);
-		if (hThread == NULL) {
-			code = -5;
-			break;
-		}
-
+			auto dwSize = dllName.size() + 1;
+			const char* pszLibFile = dllName.c_str();
+			LPVOID pszLibFileRemote = (PWSTR)VirtualAllocEx(hProcess, NULL, dwSize, MEM_COMMIT, PAGE_READWRITE);
+			if (pszLibFileRemote == nullptr) {
+				code = -1;
+				break;
+			}
+			DWORD n = WriteProcessMemory(hProcess, pszLibFileRemote, (PVOID)pszLibFile, dwSize, NULL);
+			if (n <= 0) {
+				code = -2;
+				break;
+			}
+			auto module = GetModuleHandle("Kernel32");
+			if (module == nullptr) {
+				code = -3;
+				break;
+			}
+			PTHREAD_START_ROUTINE pfnThreadRtn = (PTHREAD_START_ROUTINE)GetProcAddress(module, "LoadLibraryA");
+			if (module == nullptr) {
+				code = -4;
+				break;
+			}
+			auto hThread = CreateRemoteThread(hProcess, NULL, 0, pfnThreadRtn, pszLibFileRemote, 0, NULL);
+			if (hThread == NULL) {
+				code = -5;
+				break;
+			}
 		} while (0);
 		return code;
-
 	}
 
 	int GamerHandler::login(const string& uName, const string& uPasswd)
@@ -86,7 +83,6 @@ namespace seraphim {
 			printf("%d", err);
 		}
 		return 0;
-
 	}
 
 	void GamerHandler::termindate()
@@ -95,18 +91,13 @@ namespace seraphim {
 		if (!bError) {
 			int code = GetLastError();
 			printf_s("Terminate Error error_code=%d\n", code);
-
 		}
 	}
 
 	void GamerHandler::print()
 	{
-
 		char  msg[256];
-		sprintf_s(msg, "pid=%d ph=%p  tid=%d th=%p",(DWORD) pid,hProcess,(DWORD)tid,hTread);
+		sprintf_s(msg, "pid=%d ph=%p  tid=%d th=%p", (DWORD)pid, hProcess, (DWORD)tid, hTread);
 		OutputDebugString(msg);
-
 	}
-
 };
-

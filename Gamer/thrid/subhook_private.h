@@ -30,26 +30,26 @@
 #include <stddef.h>
 
 #ifndef true
-  #define true 1
+#define true 1
 #endif
 #ifndef false
-  #define false 0
+#define false 0
 #endif
 
 struct subhook_struct {
-  int installed;
-  void *src;
-  void *dst;
-  subhook_flags_t flags;
-  void *code;
-  void *trampoline;
-  size_t jmp_size;
-  size_t trampoline_size;
-  size_t trampoline_len;
+	int installed;
+	void* src;
+	void* dst;
+	subhook_flags_t flags;
+	void* code;
+	void* trampoline;
+	size_t jmp_size;
+	size_t trampoline_size;
+	size_t trampoline_len;
 };
 
-int subhook_unprotect(void *address, size_t size);
-void *subhook_alloc_code(size_t size);
-int subhook_free_code(void *address, size_t size);
+int subhook_unprotect(void* address, size_t size);
+void* subhook_alloc_code(size_t size);
+int subhook_free_code(void* address, size_t size);
 
 #endif /* SUBHOOK_PRIVATE_H */

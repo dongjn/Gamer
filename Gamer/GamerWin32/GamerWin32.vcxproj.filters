@@ -33,6 +33,15 @@
     <ClInclude Include="..\thrid\subhook_private.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\GameDLL\hook_utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameDLL\kernel32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameDLL\user32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GamerWin32.cpp">
@@ -40,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="..\thrid\subhook.c">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameDLL\kernel32.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameDLL\user32.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

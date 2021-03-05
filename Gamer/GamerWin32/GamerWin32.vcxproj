@@ -139,6 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\GameDLL\hook_utility.h" />
+    <ClInclude Include="..\GameDLL\kernel32.h" />
+    <ClInclude Include="..\GameDLL\user32.h" />
     <ClInclude Include="..\thrid\subhook.h" />
     <ClInclude Include="..\thrid\subhook_private.h" />
     <ClInclude Include="framework.h" />
@@ -147,6 +150,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\GameDLL\kernel32.cpp" />
+    <ClCompile Include="..\GameDLL\user32.cpp" />
     <ClCompile Include="..\thrid\subhook.c" />
     <ClCompile Include="GamerWin32.cpp" />
   </ItemGroup>
