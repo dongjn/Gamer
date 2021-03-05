@@ -24,11 +24,8 @@
     <ClCompile Include="..\thrid\subhook.c">
       <Filter>subhook</Filter>
     </ClCompile>
-    <ClCompile Include="..\thrid\subhook_windows.c">
-      <Filter>subhook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\thrid\subhook_x86.c">
-      <Filter>subhook</Filter>
+    <ClCompile Include="GamerHandler.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="..\thrid\subhook_private.h">
       <Filter>subhook</Filter>
+    </ClInclude>
+    <ClInclude Include="GamerHandler.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

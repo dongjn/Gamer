@@ -3,6 +3,8 @@
 
 #include "framework.h"
 #include "GamerWin32.h"
+#define SUBHOOK_STATIC
+#include"../thrid/subhook.h"
 
 #define MAX_LOADSTRING 100
 
@@ -24,7 +26,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
-
+    OutputDebugString("GamerWin32 Start");
     // TODO: 在此处放置代码。
 
     // 初始化全局字符串
